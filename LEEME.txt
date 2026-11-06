@@ -1,0 +1,30 @@
+NUMERIX — SISTEMAS DE NUMERACIÓN
+=================================
+
+ARCHIVOS
+- index.html: estructura de la aplicación.
+- style.css: diseño bordó adaptable a móviles.
+- script.js: lógica de los cinco métodos.
+- manifest.json: identidad e instalación PWA.
+- service-worker.js: caché para uso sin conexión.
+- icon-192.png e icon-512.png: iconos de la app.
+
+PRUEBA LOCAL
+No abras index.html con doble clic para probar la instalación PWA.
+Usa un servidor local, por ejemplo la extensión Live Server de Visual Studio Code.
+La instalación PWA requiere HTTPS (excepto localhost).
+
+PUBLICAR PARA EL ANDROID
+1. Sube el contenido de esta carpeta a un repositorio de GitHub.
+2. Activa GitHub Pages desde Settings > Pages y publica desde la rama principal.
+   También puedes usar otro hosting estático que ofrezca HTTPS.
+3. Abre el enlace publicado en Google Chrome desde el Android.
+4. En Chrome, abre el menú ⋮ y elige "Instalar aplicación" o "Añadir a pantalla principal".
+   El texto puede variar según la versión de Android/Chrome.
+
+IMPORTANTE
+- No necesita Play Store.
+- Después de la primera carga, la app guarda los archivos principales en caché para uso sin conexión.
+- Si actualizas archivos publicados, cambia CACHE_NAME en service-worker.js (por ejemplo numerix-v2)
+  para forzar una caché nueva en el dispositivo.
+- Antes de compartir el enlace, prueba los cinco casos con ejemplos conocidos.

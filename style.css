@@ -1,0 +1,121 @@
+/* ============================================
+   ESTILOS · SISTEMAS DE NUMERACIÓN
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 20%, #6e1d38 0%, transparent 40%),
+    radial-gradient(circle at 75% 55%, #6e1d38 0%, transparent 35%),
+    radial-gradient(circle at 100% 100%, #4a0d1f 0%, transparent 40%),
+    linear-gradient(135deg, #12060a 0%, #2a0c17 50%, #12060a 100%);
+  background-attachment: fixed;
+}
+.encabezado {
+  display: flex; align-items: center; gap: 22px; padding: 28px 45px;
+  background: rgba(10,3,6,.55); border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.logo {
+  width: 72px; height: 72px; border-radius: 20px; display: flex;
+  align-items: center; justify-content: center; font-size: 38px; font-weight: bold;
+  background: linear-gradient(145deg,#5a2a38,#2e141c);
+  border: 1px solid rgba(255,255,255,.15); box-shadow: 0 8px 20px rgba(0,0,0,.4);
+}
+.encabezado h1 { font-size: 34px; letter-spacing: 1px; }
+.encabezado p { color: #d9b3bd; margin-top: 4px; }
+.contenedor { max-width: 1130px; margin: 0 auto; padding: 60px 20px 80px; }
+.pantalla { display: none; }
+.pantalla.activa { display: block; }
+#menu.activa { max-width: 1130px; margin: 0 auto; }
+#caso {
+  max-width: 1060px; margin: 0 auto; padding: 30px; border-radius: 24px;
+  background: rgba(40,14,22,.55); border: 1px solid rgba(255,255,255,.07);
+}
+.titulo-seccion { display: flex; align-items: center; gap: 22px; margin-bottom: 28px; }
+.titulo-seccion h2 { font-size: 30px; }
+.titulo-seccion p { color: #d9b3bd; margin-top: 6px; }
+.icono-seccion {
+  width: 72px; height: 72px; border-radius: 20px; display: flex;
+  align-items: center; justify-content: center; font-size: 30px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+}
+.numero {
+  flex-shrink: 0; width: 68px; height: 68px; border-radius: 18px; display: flex;
+  align-items: center; justify-content: center; font-size: 17px; font-weight: bold;
+  background: linear-gradient(145deg,#8a2346,#5c1530);
+  border: 1px solid rgba(255,255,255,.2); box-shadow: 0 8px 18px rgba(0,0,0,.4);
+}
+.opcion {
+  display: flex; align-items: center; gap: 24px; padding: 24px 26px; margin-bottom: 20px;
+  border-radius: 26px; cursor: pointer; background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12); transition: transform .2s,background .2s,border-color .2s;
+}
+.opcion:hover { transform: translateX(6px); background: rgba(255,255,255,.11); border-color: rgba(240,130,160,.5); }
+.opcion .info { flex: 1; }
+.opcion h3 { font-size: 21px; }
+.opcion p { margin-top: 6px; color: #d9b3bd; font-size: 15px; }
+.flecha { font-size: 30px; color: #f08ca8; }
+.btn-volver { background: none; border: none; color: #f08ca8; font-size: 15px; cursor: pointer; margin-bottom: 22px; }
+.btn-volver:hover { text-decoration: underline; }
+.grupo { margin-bottom: 22px; }
+.grupo label { display: block; margin-bottom: 10px; color: #e6c4cd; font-size: 16px; }
+.grupo input {
+  width: 100%; padding: 18px 20px; border-radius: 16px; font-size: 17px; color: #fff;
+  background: rgba(25,8,14,.8); border: 1px solid rgba(255,255,255,.1); outline: none;
+}
+.grupo input::placeholder { color: rgba(255,255,255,.35); }
+.grupo input:focus { border-color: #f08ca8; }
+.btn-calcular {
+  width: 100%; padding: 20px; margin-top: 8px; border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.15); font-size: 18px; font-weight: bold;
+  color: #fff; cursor: pointer; background: linear-gradient(90deg,#a63456,#6e1530);
+  transition: filter .2s,transform .1s;
+}
+.btn-calcular:hover { filter: brightness(1.15); }
+.btn-calcular:active { transform: scale(.99); }
+.caja-resultado {
+  display: none; margin-top: 32px; padding: 32px; border-radius: 24px;
+  background: rgba(25,8,14,.65); border: 1px solid rgba(255,255,255,.08);
+}
+.caja-resultado h3 { color: #f0a0b8; font-size: 23px; margin-bottom: 22px; }
+.caja-resultado p { color: #e6c4cd; }
+.paso {
+  padding: 14px 0; font-family: Consolas,"Courier New",monospace; font-size: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08); white-space: pre-wrap; overflow-wrap: anywhere;
+  color: #ff829e;
+}
+.suma { margin-top: 24px; font-size: 21px; font-weight: bold; color: #f5dce3; }
+.resultado-final {
+  margin-top: 26px; padding: 26px; text-align: center; font-size: 26px; font-weight: bold;
+  border-radius: 18px; background: rgba(100,25,48,.45);
+  border: 1px solid rgba(255,255,255,.1); overflow-wrap: anywhere;
+}
+.nota-pie,.pie { text-align: center; color: rgba(217,179,189,.65); font-size: 12px; letter-spacing: 1.2px; }
+.nota-pie { margin-top: 30px; }
+.pie { padding: 0 16px 24px; }
+button,input { font: inherit; }
+button:focus-visible,.opcion:focus-visible { outline: 2px solid #f08ca8; outline-offset: 3px; }
+
+@media (max-width:700px) {
+  .encabezado { padding: 20px; gap: 14px; }
+  .logo { width: 54px; height: 54px; border-radius: 16px; font-size: 30px; }
+  .encabezado h1 { font-size: 19px; line-height: 1.25; }
+  .encabezado p { font-size: 13px; }
+  .contenedor { padding: 30px 14px 45px; }
+  .titulo-seccion { gap: 14px; }
+  .titulo-seccion h2 { font-size: 23px; }
+  .titulo-seccion p { font-size: 14px; line-height: 1.4; }
+  .icono-seccion,.numero { width: 56px; height: 56px; border-radius: 16px; }
+  .opcion { padding: 17px 15px; gap: 13px; border-radius: 20px; }
+  .opcion h3 { font-size: 17px; }
+  .opcion p { font-size: 13px; line-height: 1.4; }
+  .flecha { font-size: 23px; }
+  #caso { padding: 18px; border-radius: 20px; }
+  .grupo input { padding: 16px; }
+  .caja-resultado { padding: 20px; }
+  .resultado-final { font-size: 20px; padding: 20px 14px; }
+  .paso { font-size: 14px; }
+}

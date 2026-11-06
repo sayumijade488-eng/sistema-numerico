@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2a0c17">
+  <meta name="description" content="Conversor y descomposición de sistemas de numeración.">
+  <title>Sistemas de Numeración</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="logo">∑</div>
+    <div>
+      <h1>SISTEMAS DE NUMERACIÓN</h1>
+      <p>Conversor y descomposición numérica</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section id="menu" class="pantalla activa">
+      <div class="titulo-seccion">
+        <div class="icono-seccion">🔢</div>
+        <div>
+          <h2>¿Qué deseas realizar?</h2>
+          <p>Selecciona uno de los métodos de conversión</p>
+        </div>
+      </div>
+
+      <div class="opcion" onclick="mostrarCaso(1)">
+        <div class="numero">01</div>
+        <div class="info"><h3>Descomposición</h3><p>Descompone un número en potencias de 10.</p></div>
+        <span class="flecha">⟶</span>
+      </div>
+      <div class="opcion" onclick="mostrarCaso(2)">
+        <div class="numero">02</div>
+        <div class="info"><h3>Base N → Decimal</h3><p>Convierte un número de otra base al sistema decimal.</p></div>
+        <span class="flecha">⟶</span>
+      </div>
+      <div class="opcion" onclick="mostrarCaso(3)">
+        <div class="numero">03</div>
+        <div class="info"><h3>Decimal → Base N</h3><p>Convierte un número decimal a otra base mediante divisiones sucesivas.</p></div>
+        <span class="flecha">⟶</span>
+      </div>
+      <div class="opcion" onclick="mostrarCaso(4)">
+        <div class="numero">04</div>
+        <div class="info"><h3>Base N → Base M</h3><p>Convierte directamente entre dos sistemas de numeración.</p></div>
+        <span class="flecha">⟶</span>
+      </div>
+      <div class="opcion" onclick="mostrarCaso(5)">
+        <div class="numero">05</div>
+        <div class="info"><h3>Hexadecimal ↔ Base N</h3><p>Convierte desde o hacia hexadecimal usando dígitos 0-9 y letras A-F.</p></div>
+        <span class="flecha">⟶</span>
+      </div>
+      <p class="nota-pie">NUMERIX · Herramienta de sistemas de numeración</p>
+    </section>
+
+    <section id="caso" class="pantalla">
+      <button class="btn-volver" onclick="volverMenu()">← Volver al menú</button>
+      <div class="titulo-seccion">
+        <div class="numero" id="numeroCaso">01</div>
+        <div><h2 id="tituloCaso"></h2><p id="descripcionCaso"></p></div>
+      </div>
+      <div id="formulario"></div>
+      <button class="btn-calcular" onclick="calcular()">🧮 Calcular</button>
+      <div id="resultado" class="caja-resultado" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="pie">Diseñado para aprender · Sistemas de Numeración</footer>
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js").catch(err => {
+          console.error("No se pudo registrar el service worker:", err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
